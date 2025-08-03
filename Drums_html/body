@@ -1,0 +1,113 @@
+<body>
+    <button onclick="toggleTheme()" id="themeBtn">🌙 Light Mode</button>
+
+
+    <header>
+        <h1>Drummer Beats </h1>
+        <p>Feel the Rhythm. Live the Music.</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#audio">Music</a>
+        <a href="#video">Video</a>
+        <a href="#drums">Drums</a>
+        <a href="#login">Sign In</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm a passionate drummer with a love for rhythm and groove. I've been playing drums since my 2 ug, performing in bands, teaching students, and producing my own beats. Join me on this musical journey and explore the world of percussion!</p>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h2>Photo Gallery</h2>
+        <img src="Screenshot 2025-03-29 140323.png" type="image/png" alt="Drummer 1"><br>
+        <img src="PSN_0198.JPG" type="image/jpeg" alt="Drummer 2"><br>
+        <img src="Screenshot 2025-08-02 213016.png" type="image/png" alt="Drum Kit"><br>
+    </section>
+
+    <section id="audio" class="audio">
+        <h2>My Beats</h2>
+        <audio controls  muted>
+            <source src="My Song Lyrics_files/Chalchitra - Apurva Tamang _ Official MV.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </section>
+
+    <section id="drums">
+        <h2>Play the Drums</h2>
+        <div class="drum-pad">
+            <button onclick="playSound('kick')">Kick</button>
+            <button onclick="playSound('snare')">Snare</button>
+            <button onclick="playSound('hihat')">Hi-Hat</button>
+            <button onclick="playSound('tom1')">Tom 1</button>
+            <button onclick="playSound('tom2')">Tom 2</button>
+            <button onclick="playSound('crash')">Crash</button>
+            <button onclick="playSound('ride')">Ride</button>
+            <button onclick="playSound('clap')">Clap</button>
+            <button onclick="playSound('cowbell')">Cowbell</button>
+        </div>
+     <!--<section class="video-section" >
+  <h2>Watch a Song Performance</h2>
+  <div class="video-container" >
+    <iframe width="560" height="315" 
+      src="One Piece _ Drums of Liberation x Overtaken (GEAR 5 Theme) - TU Symphony Orchestra.mp4"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>-->
+<section id="video">
+  <h2>Watch a Song Performance</h2>
+  <div class="video-container">
+    <video width="560" height="315"  muted controls loop>
+      <source src="One Piece _ Drums of Liberation x Overtaken (GEAR 5 Theme) - TU Symphony Orchestra.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+
+
+
+    <section id="login" class="login">
+        <h3>Sign In</h3>
+        <form action="#" method="post">
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message..." rows="5" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        &copy; 2025 Drummer Beats. All rights reserved.
+    </footer>
+
+    <script>
+        function playSound(name) {
+            const audio = new Audio(`sounds/${name}.mp3`);
+            audio.play();
+        }
+    </script>
+    <script>
+    function toggleTheme() {
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+        document.getElementById('themeBtn').textContent = isLight ? 'Dark Mode' : 'Light Mode';
+    }
+</script>
+
+</body>
